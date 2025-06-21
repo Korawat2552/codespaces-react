@@ -1,0 +1,42 @@
+h1{
+    color:rgba(17, 84, 209, 0.993)
+}
+h1:hover{
+    font-size: 100px;
+    animation: rainbow 5s infinite;
+    background-color: rgb(203, 152, 252);
+}
+
+@keyframes rainbow {
+    0% { color: rgb(37, 0, 138); font-size: 40px;}
+    16% { color: rgb(107, 0, 139); font-size: 50px;}
+    33% { color: rgb(195, 0, 255); font-size: 40px;}
+    50% { color: rgb(247, 0, 255); font-size: 50px;}
+    66% { color: rgb(255, 0, 242); font-size: 40px;}
+    83% { color: rgb(255, 0, 106); font-size: 50px;}
+    100% { color: rgb(118, 0, 253); font-size: 40px;}
+    }
+     img{
+        animation: rainbow 5s infinite;
+        border: solid 5px;
+        border-radius:20px
+        box-shadow: 21px 16px 31px -1px rgba(0,0,0,0.75);
+-webkit-box-shadow: 21px 16px 31px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 21px 16px 31px -1px rgba(0,0,0,0.75);
+transform: skew(-16deg) translate(-6px,0px);
+-webkit-transform: skew(-16deg) translate(-6px,0px);
+-moz-transform: skew(-16deg) translate(-6px,0px);
+        
+    }
+    @keyframes rainbow {
+    0% { color: rgb(37, 0, 138); font-size: 40px;}
+    16% { color: rgb(107, 0, 139); font-size: 50px;}
+    33% { color: rgb(195, 0, 255); font-size: 40px;}
+    50% { color: rgb(247, 0, 255); font-size: 50px;}
+    66% { color: rgb(255, 0, 242); font-size: 40px;}
+    83% { color: rgb(255, 0, 106); font-size: 50px;}
+    100% { color: rgb(118, 0, 253); font-size: 40px;}
+
+
+
+
