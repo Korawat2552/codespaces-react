@@ -1,0 +1,216 @@
+h1,h5,input{
+     font-size: 20px;
+    animation: rainbow 3s infinite;
+
+}
+
+@keyframes rainbow {
+    0% { color: rgb(37, 0, 138);}
+    16% { color: rgb(107, 0, 139);}
+    33% { color: rgb(195, 0, 255);}
+    50% { color: rgb(247, 0, 255); }
+    66% { color: rgb(255, 0, 242);}
+    83% { color: rgb(255, 0, 106); }
+    100% { color: rgb(118, 0, 253);}
+}
+*
+
+body {
+    background: linear-gradient(135deg, #000000, #1a0a2a, #000033); /* Black to deep purple-blue space background */
+    color: #e0e0f0; /* Light, slightly cool text */
+    font-family: 'Space Mono', monospace; /* A more sci-fi font if available, fallback to monospace */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Hide potential scrollbars from effects */
+    position: relative;
+    box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+}
+
+/* Starfield effect */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNzAwIDcwMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNzAwIDcwMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxzdHlsZT4uc3Qwe2ZpbGw6I2ZmZjt9PC9zdHlsZT48Y2lyY2xlIGNsYXNzPSJzdDAiIGN4PSI1MCUiIGN5PSIyMCUiIHI9IjAuNSIvPjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjkwJSIgY3k9IjMwJSIgcj0iMC42Ii8+PGNpcmNsIGNsYXNzPSJzdDAiIGN4PSIxNSUiIGN5PSI0MCUiIHI9IjAuMyIvPjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjcwJSIgY3k9IjYwJSIgcj0iMC43Ii8+PGNpcmNsIGNsYXNzPSJzdDAiIGN4PSIzMCUiIGN5PSI4NSUiIHI9IjAuNCIvPjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjEwJSIgY3k9IjEwJSIgcj0iMC44Ii8+PGNpcmNsIGNsYXNzPSJzdDAiIGN4PSI1NSUiIGN5PSI5MCUiIHI9IjAuMiIvPjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9Ijg1JSIgY3k9IjgwJSIgcj0iMC41Ii8+PC9zdmc+') repeat;
+    background-size: 40px 40px; /* Adjust star density */
+    opacity: 0.8;
+    animation: moveStars 100s linear infinite;
+    z-index: -2;
+}
+
+/* Fainter, larger stars/nebula glow */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top left, rgba(138, 43, 226, 0.2) 0%, transparent 40%), /* Purple glow */
+                radial-gradient(circle at bottom right, rgba(0, 191, 255, 0.2) 0%, transparent 40%), /* Blue glow */
+                radial-gradient(circle at center, rgba(255, 69, 0, 0.1) 0%, transparent 60%); /* Red glow */
+    opacity: 0.8;
+    z-index: -1;
+    animation: nebulaGlow 20s infinite alternate ease-in-out;
+}
+
+@keyframes moveStars {
+    from { background-position: 0 0; }
+    to { background-position: 100% 100%; }
+}
+
+@keyframes nebulaGlow {
+    0% { transform: scale(1) translate(0, 0); opacity: 0.8; }
+    50% { transform: scale(1.05) translate(15px, -15px); opacity: 0.9; }
+    100% { transform: scale(1) translate(0, 0); opacity: 0.8; }
+}
+
+
+#root {
+    background-color: rgba(10, 10, 20, 0.85); /* Even darker, slightly opaque module */
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #8A2BE2, #4169E1, #FF4500, #000000) 1; /* Purple, Blue, Red, Black border */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0, 191, 255, 0.5), /* Electric blue glow */
+                0 0 80px rgba(138, 43, 226, 0.3); /* Deep purple glow */
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    backdrop-filter: blur(10px); /* Stronger frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    position: relative;
+    z-index: 1; /* Ensure it's above the background effects */
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #FF4500, #4169E1, #8A2BE2, #000000); /* Red, Blue, Purple, Black gradient for title */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(255, 69, 0, 0.6), 0 0 30px rgba(65, 105, 225, 0.6); /* Intense glowing text effect */
+    letter-spacing: 2px;
+}
+
+input {
+    width: calc(100% - 28px); /* Account for padding and border */
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #3a3a50; /* Subtle border */
+    border-radius: 10px;
+    background-color: rgba(20, 20, 40, 0.95); /* Darker, slightly more opaque input fields */
+    color: #e0e0f0;
+    font-size: 1.2em;
+    box-sizing: border-box;
+    transition: all 0.4s ease;
+    text-align: center; /* Center placeholder text */
+}
+
+input::placeholder {
+    color: #a0a0b0;
+    opacity: 0.7;
+}
+
+input:focus {
+    outline: none;
+    border-color: #00BFFF; /* Deep Sky Blue on focus */
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.8); /* Stronger blue glow */
+    background-color: rgba(30, 30, 50, 0.98);
+}
+
+button {
+    background: linear-gradient(45deg, #8A2BE2, #4169E1, #FF4500, #000000); /* Purple, Blue, Red, Black gradient button */
+    background-size: 200% auto; /* For animating background position */
+    color: #ffffff; /* White text on button */
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.3em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px auto;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.5); /* Red glow for button */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-position: right center; /* Animate gradient on hover */
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 0 30px rgba(255, 69, 0, 0.8), 0 0 20px rgba(138, 43, 226, 0.8); /* More intense multi-color glow */
+}
+
+button img {
+    height: 40px; /* Larger icon */
+    vertical-align: middle;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9)); /* Stronger white glow for icon */
+}
+
+.BMIText h1 {
+    font-size: 2.5em;
+    margin-top: 30px;
+    background: none; /* Reset gradient for BMI text */
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    color: #ADD8E6; /* Light blue for default BMI text */
+    text-shadow: 0 0 10px rgba(173, 216, 230, 0.8); /* Stronger soft glow */
+    letter-spacing: 1px;
+}
+
+.BMIText img {
+    max-width: 200px; /* Even larger images */
+    height: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 3px solid rgba(255, 255, 255, 0.4); /* Stronger white border */
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.5); /* Blue glow around images */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.BMIText img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px rgba(0, 191, 255, 0.7);
+}
+
+/* Specific glowing colors for BMI categories */
+.BMIText h1:has(+ img[src="ผอม.jpg"]) {
+    color: #FFD700; /* Gold for underweight */
+    text-shadow: 0 0 12px rgba(255, 215, 0, 0.9);
+}
+
+.BMIText h1:has(+ img[src="อ้วน.jpg"]) {
+    color: #FF6347; /* Tomato red for overweight */
+    text-shadow: 0 0 12px rgba(255, 99, 71, 0.9);
+}
+
+.BMIText h1:has(+ img[src="กลางๆ.png"]) {
+    color: #32CD32; /* Lime Green for normal weight */
+    text-shadow: 0 0 12px rgba(50, 205, 50, 0.9);
+}
+
+p {
+    margin-top: 25px;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #e0e0f0;
+    text-shadow: 0 0 8px rgba(224, 224, 240, 0.7);
+    letter-spacing: 0.5px;
+}
