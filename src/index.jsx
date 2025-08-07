@@ -5,7 +5,7 @@ import './index.css';
 //import Hello from './Hello';
 //import Counter from './Counter';
 //import Backpack from './Backpack';
-import BMI from './ฺBMI';
+import Counter from './ฺBMI';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,7 +13,7 @@ root.render(
   <React.StrictMode>
 {/*<Counter></Counter>*/}
 {/*<Backpack></Backpack>*/}
-<BMI/>
+<Counter/>
     {/*<App />*/}
   </React.StrictMode>
 );
